@@ -99,6 +99,15 @@ public class NewCalculator_Test {
     return false;
   }
 
+  public static boolean testChangedValueOfOperatorIsNotStartValue() {
+    String newValue = "not start value";
+    calc.setOperator(newValue);
+    if (!testStartValueOfOperator()) {
+      return true;
+    }
+    return false;
+  }
+
   public static void main(String[] args) {
     // test start values
     System.out.println("\nTest start values of variables:");
@@ -171,6 +180,12 @@ public class NewCalculator_Test {
       System.out.println("testChangedValueOfAnswerIsNotStartValue() " + "PASSED");
     } else {
       System.out.println("testChangedValueOfAnswerIsNotStartValue() " + "FAILED");
+    }
+
+    if (testChangedValueOfOperatorIsNotStartValue()) {
+      System.out.println("testChangedValueOfOperatorIsNotStartValue() " + "PASSED");
+    } else {
+      System.out.println("testChangedValueOfOperatorIsNotStartValue() " + "FAILED");
     }
   }
 }
