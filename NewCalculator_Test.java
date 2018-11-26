@@ -44,6 +44,15 @@ public class NewCalculator_Test {
     return false;
   }
 
+  public static boolean testChangeValueOfAnswer() {
+    double newValue = 9.1;
+    calc.setAnswer(newValue);
+    if (calc.getAnswer() == newValue) {
+      return true;
+    }
+    return false;
+  }
+
   public static boolean testChangedValueOfFirstNumberIsNotStartValue() {
     double newValue = 9.1;
     calc.setFirstNumber(newValue);
@@ -98,6 +107,12 @@ public class NewCalculator_Test {
       System.out.println("testChangeValueOfSecondNumber() " + "PASSED");
     } else {
       System.out.println("testChangeValueOfSecondNumber() " + "FAILED");
+    }
+
+    if (testChangeValueOfAnswer()) {
+      System.out.println("testChangeValueOfAnswer() " + "PASSED");
+    } else {
+      System.out.println("testChangeValueOfAnswer() " + "FAILED");
     }
 
     // test changed value of variable firstNumber is not its start value
