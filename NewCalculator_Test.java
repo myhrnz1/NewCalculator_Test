@@ -62,7 +62,7 @@ public class NewCalculator_Test {
   }
 
   public static boolean testChangeValueOfOperator() {
-    String newValue = "not start value";
+    String newValue = "some value";
     calc.setOperator(newValue);
     if (calc.getOperator().equals(newValue)) {
       return true;
