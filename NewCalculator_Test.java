@@ -144,6 +144,17 @@ public class NewCalculator_Test {
     return false;
   }
 
+  public static boolean testMult(double d1, double d2) {
+    NewCalculator nCalc = new NewCalculator();
+    nCalc.setFirstNumber(d1);
+    nCalc.setSecondNumber(d2);
+    nCalc.mult();
+    if (nCalc.getAnswer() == (d1 * d2)) {
+      return true;
+    }
+    return false;
+  }
+
   public static void main(String[] args) {
     // test start values
     System.out.println("\nTest start values of variables:");
@@ -232,10 +243,10 @@ public class NewCalculator_Test {
       System.out.println("testAdd(1,1) " + "FAILED");
     }
 
-    if (testAdd(5,7)) {
-      System.out.println("testAdd(5,7) " + "PASSED");
+    if (testAdd(5.563434,7.753434289)) {
+      System.out.println("testAdd(5.563434,7.753434289) " + "PASSED");
     } else {
-      System.out.println("testAdd(5,7) " + "FAILED");
+      System.out.println("testAdd(5.563434,7.753434289) " + "FAILED");
     }
 
     if (testAdd(7824826,1923)) {
@@ -276,10 +287,10 @@ public class NewCalculator_Test {
       System.out.println("testSub(1,1) " + "FAILED");
     }
 
-    if (testSub(5,7)) {
-      System.out.println("testSub(5,7) " + "PASSED");
+    if (testSub(5.563434,7.753434289)) {
+      System.out.println("testSub(5.563434,7.753434289) " + "PASSED");
     } else {
-      System.out.println("testSub(5,7) " + "FAILED");
+      System.out.println("testSub(5.563434,7.753434289) " + "FAILED");
     }
 
     if (testSub(7824826,1923)) {
@@ -311,6 +322,51 @@ public class NewCalculator_Test {
     } else {
       System.out.println("(testSub(-1052323434,-5234) " + "FAILED");
     }
+
+    // test mult method
+    System.out.println("\nTest mult() with various numbers");
+    if (testMult(1,1)) {
+      System.out.println("(testMult(1,1) " + "PASSED");
+    } else {
+      System.out.println("(testMult(1,1) " + "FAILED");
+    }
+
+    if (testMult(5,7)) {
+      System.out.println("(testMult(5,7) " + "PASSED");
+    } else {
+      System.out.println("(testMult(5,7) " + "FAILED");
+    }
+
+    if (testMult(7824826,1923)) {
+      System.out.println("(testMult(7824826,1923) " + "PASSED");
+    } else {
+      System.out.println("(testMult(7824826,1923) " + "FAILED");
+    }
+
+    if (testMult(0.0000001,0.0000001)) {
+      System.out.println("(testMult(0.0000001,0.0000001) " + "PASSED");
+    } else {
+      System.out.println("(testMult(0.0000001,0.0000001) " + "FAILED");
+    }
+
+    if (testMult(-105,5)) {
+      System.out.println("(testMult(-105,5) " + "PASSED");
+    } else {
+      System.out.println("(testMult(-105,5) " + "FAILED");
+    }
+
+    if (testMult(105,-5)) {
+      System.out.println("(testMult(105,-5) " + "PASSED");
+    } else {
+      System.out.println("(testMult(105,-5) " + "FAILED");
+    }
+
+    if (testMult(-1052323434,-5234)) {
+      System.out.println("(testMult(-1052323434,-5234) " + "PASSED");
+    } else {
+      System.out.println("(testMult(-1052323434,-5234) " + "FAILED");
+    }
+
 
   }
 }
