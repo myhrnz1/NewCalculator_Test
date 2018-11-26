@@ -31,7 +31,7 @@ public class NewCalculator_Test {
     if (testChangeValueOfFirstNumber()) {
       System.out.println("testChangeValueOfFirstNumber() " + "PASSED");
     } else {
-      System.out.println("testChangeValueOfFirstNumber() " + "PASSED");
+      System.out.println("testChangeValueOfFirstNumber() " + "FAILED");
     }
   }
 }
