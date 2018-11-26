@@ -155,6 +155,17 @@ public class NewCalculator_Test {
     return false;
   }
 
+  public static boolean testDiv(double d1, double d2) {
+    NewCalculator nCalc = new NewCalculator();
+    nCalc.setFirstNumber(d1);
+    nCalc.setSecondNumber(d2);
+    nCalc.div();
+    if (nCalc.getAnswer() == (d1 / d2)) {
+      return true;
+    }
+    return false;
+  }
+
   public static void main(String[] args) {
     // test start values
     System.out.println("\nTest start values of variables:");
@@ -331,10 +342,10 @@ public class NewCalculator_Test {
       System.out.println("(testMult(1,1) " + "FAILED");
     }
 
-    if (testMult(5,7)) {
-      System.out.println("(testMult(5,7) " + "PASSED");
+    if (testMult(5.563434,7.753434289)) {
+      System.out.println("(testMult(5.563434,7.753434289) " + "PASSED");
     } else {
-      System.out.println("(testMult(5,7) " + "FAILED");
+      System.out.println("(testMult(5.563434,7.753434289) " + "FAILED");
     }
 
     if (testMult(7824826,1923)) {
@@ -367,6 +378,55 @@ public class NewCalculator_Test {
       System.out.println("(testMult(-1052323434,-5234) " + "FAILED");
     }
 
+    // test div method
+    System.out.println("\nTest div() with various numbers");
+    if (testDiv(1,1)) {
+      System.out.println("testDiv(1,1) " + "PASSED");
+    } else {
+      System.out.println("testDiv(1,1) " + "FAILED");
+    }
+
+    if (testDiv(5.563434,7.753434289)) {
+      System.out.println("testDiv(5.563434,7.753434289) " + "PASSED");
+    } else {
+      System.out.println("testDiv(5.563434,7.753434289) " + "FAILED");
+    }
+
+    if (testDiv(7824826,1923)) {
+      System.out.println("testDiv(7824826,1923) " + "PASSED");
+    } else {
+      System.out.println("testDiv(7824826,1923) " + "FAILED");
+    }
+
+    if (testDiv(7824826,0.00000001)) {
+      System.out.println("testDiv(7824826,0.00000001) " + "PASSED");
+    } else {
+      System.out.println("testDiv(7824826,0.00000001) " + "FAILED");
+    }
+
+    if (testDiv(0.00000001,99999999)) {
+      System.out.println("(testDiv(0.00000001,99999999) " + "PASSED");
+    } else {
+      System.out.println("testDiv(0.00000001,99999999) " + "FAILED");
+    }
+
+    if (testDiv(-105,5)) {
+      System.out.println("testDiv(-105,5) " + "PASSED");
+    } else {
+      System.out.println("testDiv(-105,5) " + "FAILED");
+    }
+
+    if (testDiv(105,-5)) {
+      System.out.println("testDiv(105,-5) " + "PASSED");
+    } else {
+      System.out.println("testDiv(105,-5) " + "FAILED");
+    }
+
+    if (testDiv(-1052323434,-5234)) {
+      System.out.println("testDiv(-1052323434,-5234) " + "PASSED");
+    } else {
+      System.out.println("testDiv(-1052323434,-5234) " + "FAILED");
+    }
 
   }
 }
