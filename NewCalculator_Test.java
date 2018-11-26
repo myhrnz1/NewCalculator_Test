@@ -133,6 +133,17 @@ public class NewCalculator_Test {
     return false;
   }
 
+  public static boolean testSub(double d1, double d2) {
+    NewCalculator nCalc = new NewCalculator();
+    nCalc.setFirstNumber(d1);
+    nCalc.setSecondNumber(d2);
+    nCalc.sub();
+    if (nCalc.getAnswer() == (d1 - d2)) {
+      return true;
+    }
+    return false;
+  }
+
   public static void main(String[] args) {
     // test start values
     System.out.println("\nTest start values of variables:");
@@ -233,6 +244,12 @@ public class NewCalculator_Test {
       System.out.println("testAdd(7824826,1923) " + "FAILED");
     }
 
+    if (testAdd(99999999,1)) {
+      System.out.println("testAdd(99999999,1) " + "PASSED");
+    } else {
+      System.out.println("testAdd(99999999,1) " + "FAILED");
+    }
+
     if (testAdd(-105,5)) {
       System.out.println("testAdd(-105,5) " + "PASSED");
     } else {
@@ -250,5 +267,50 @@ public class NewCalculator_Test {
     } else {
       System.out.println("testAdd(-1052323434,-5234) " + "FAILED");
     }
+
+    // test sub method
+    System.out.println("\nTest sub() with various numbers");
+    if (testSub(1,1)) {
+      System.out.println("testSub(1,1) " + "PASSED");
+    } else {
+      System.out.println("testSub(1,1) " + "FAILED");
+    }
+
+    if (testSub(5,7)) {
+      System.out.println("testSub(5,7) " + "PASSED");
+    } else {
+      System.out.println("testSub(5,7) " + "FAILED");
+    }
+
+    if (testSub(7824826,1923)) {
+      System.out.println("testSub(7824826,1923) " + "PASSED");
+    } else {
+      System.out.println("testSub(7824826,1923) " + "FAILED");
+    }
+
+    if (testSub(100000001,1)) {
+      System.out.println("testSub(100000001,1) " + "PASSED");
+    } else {
+      System.out.println("testSub(100000001,1) " + "FAILED");
+    }
+
+    if (testSub(-105,5)) {
+      System.out.println("testSub(-105,5) " + "PASSED");
+    } else {
+      System.out.println("testSub(-105,5) " + "FAILED");
+    }
+
+    if (testSub(105,-5)) {
+      System.out.println("(testSub(105,-5) " + "PASSED");
+    } else {
+      System.out.println("(testSub(105,-5) " + "FAILED");
+    }
+
+    if (testSub(-1052323434,-5234)) {
+      System.out.println("(testSub(-1052323434,-5234) " + "PASSED");
+    } else {
+      System.out.println("(testSub(-1052323434,-5234) " + "FAILED");
+    }
+
   }
 }
