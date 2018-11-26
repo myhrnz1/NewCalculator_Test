@@ -10,6 +10,14 @@ public class NewCalculator_Test {
     return false;
   }
 
+  public static boolean testStartValueOfSecondNumber() {
+    double temp = calc.getSecondNumber();
+    if (temp == 0) {
+      return true;
+    }
+    return false;
+  }
+
   public static boolean testChangeValueOfFirstNumber() {
     double newValue = 9.1;
     calc.setFirstNumber(newValue);
@@ -31,14 +39,22 @@ public class NewCalculator_Test {
   }
 
   public static void main(String[] args) {
-    // test start value of variable firstNumber
+    // test start values
+    System.out.println("\nTest start values of variables:");
     if (testStartValueOfFirstNumber()) {
       System.out.println("testStartValueOfFirstNumber() " + "PASSED");
     } else {
       System.out.println("testStartValueOfFirstNumber() " + "FAILED");
     }
 
+    if (testStartValueOfSecondNumber()) {
+      System.out.println("testStartValueOfSecondNumber() " + "PASSED");
+    } else {
+      System.out.println("testStartValueOfSecondNumber() " + "FAILED");
+    }
+
     // test change value of variable firstNumber
+    System.out.println("\nTest change values of variables:");
     if (testChangeValueOfFirstNumber()) {
       System.out.println("testChangeValueOfFirstNumber() " + "PASSED");
     } else {
@@ -46,6 +62,7 @@ public class NewCalculator_Test {
     }
 
     // test changed value of variable firstNumber is not its start value
+    System.out.println("\nTest changed values of variables are not start values");
     if (testChangedValueOfFirstNumberIsNotStartValue()) {
       System.out.println("testChangedValueOfFirstNumberIsNotStartValue() " + "PASSED");
     } else {
