@@ -73,8 +73,6 @@ public class NewCalculator_Test {
   public static boolean testChangedValueOfFirstNumberIsNotStartValue() {
     double newValue = 9.1;
     calc.setFirstNumber(newValue);
-    // I read it is considered bad practice to make a test dependable upon another test...
-    // is this rule applicable here?
     if (!testStartValueOfFirstNumber()) {
       return true;
     }
@@ -103,6 +101,16 @@ public class NewCalculator_Test {
     String newValue = "not start value";
     calc.setOperator(newValue);
     if (!testStartValueOfOperator()) {
+      return true;
+    }
+    return false;
+  }
+
+  public static boolean testAdd(double d1, double d2) {
+    calc.setFirstNumber(d1);
+    calc.setSecondNumber(d2);
+    calc.add();
+    if (calc.getAnswer() == (d1 + d2)) {
       return true;
     }
     return false;
@@ -186,6 +194,44 @@ public class NewCalculator_Test {
       System.out.println("testChangedValueOfOperatorIsNotStartValue() " + "PASSED");
     } else {
       System.out.println("testChangedValueOfOperatorIsNotStartValue() " + "FAILED");
+    }
+    
+    // test add method
+    System.out.println("\nTest add() with various numbers");
+    if (testAdd(1,1)) {
+      System.out.println("testAdd(1,1) " + "PASSED");
+    } else {
+      System.out.println("testAdd(1,1) " + "FAILED");
+    }
+
+    if (testAdd(5,7)) {
+      System.out.println("testAdd(5,7) " + "PASSED");
+    } else {
+      System.out.println("testAdd(5,7) " + "FAILED");
+    }
+
+    if (testAdd(7824826,1923)) {
+      System.out.println("testAdd(7824826,1923) " + "PASSED");
+    } else {
+      System.out.println("testAdd(7824826,1923) " + "FAILED");
+    }
+
+    if (testAdd(-105,5)) {
+      System.out.println("testAdd(-105,5) " + "PASSED");
+    } else {
+      System.out.println("testAdd(-105,5) " + "FAILED");
+    }
+
+    if (testAdd(105,-5)) {
+      System.out.println("testAdd(105,-5) " + "PASSED");
+    } else {
+      System.out.println("testAdd(105,-5) " + "FAILED");
+    }
+
+    if (testAdd(-1052323434,-5234)) {
+      System.out.println("testAdd(-1052323434,-5234) " + "PASSED");
+    } else {
+      System.out.println("testAdd(-1052323434,-5234) " + "FAILED");
     }
   }
 }
