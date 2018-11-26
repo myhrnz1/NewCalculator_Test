@@ -26,6 +26,14 @@ public class NewCalculator_Test {
     return false;
   }
 
+  public static boolean testStartValueOfOperator() {
+    String temp = calc.getOperator();
+    if (temp.equals("-1")) {
+      return true;
+    }
+    return false;
+  }
+
   public static boolean testChangeValueOfFirstNumber() {
     double newValue = 9.1;
     calc.setFirstNumber(newValue);
@@ -101,6 +109,12 @@ public class NewCalculator_Test {
       System.out.println("testStartValueOfAnswer() " + "PASSED");
     } else {
       System.out.println("testStartValueOfAnswer() " + "FAILED");
+    }
+
+    if (testStartValueOfOperator()) {
+      System.out.println("testStartValueOfOperator() " + "PASSED");
+    } else {
+      System.out.println("testStartValueOfOperator() " + "FAILED");
     }
 
     // test change value of variables
