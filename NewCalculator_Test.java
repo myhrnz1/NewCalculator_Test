@@ -19,6 +19,17 @@ public class NewCalculator_Test {
     return false;
   }
 
+  public static boolean testChangedValueOfFirstNumberIsNotStartValue() {
+    double newValue = 9.1;
+    calc.setFirstNumber(newValue);
+    // I read it is considered bad practice to make a test dependable upon another test...
+    // is this rule applicable here?
+    if (!testStartValueOfFirstNumber()) {
+      return true;
+    }
+    return false;
+  }
+
   public static void main(String[] args) {
     // test start value of variable firstNumber
     if (testStartValueOfFirstNumber()) {
@@ -32,6 +43,13 @@ public class NewCalculator_Test {
       System.out.println("testChangeValueOfFirstNumber() " + "PASSED");
     } else {
       System.out.println("testChangeValueOfFirstNumber() " + "FAILED");
+    }
+
+    // test changed value of variable firstNumber is not its start value
+    if (testChangedValueOfFirstNumberIsNotStartValue()) {
+      System.out.println("testChangedValueOfFirstNumberIsNotStartValue() " + "PASSED");
+    } else {
+      System.out.println("testChangedValueOfFirstNumberIsNotStartValue() " + "FAILED");
     }
   }
 }
