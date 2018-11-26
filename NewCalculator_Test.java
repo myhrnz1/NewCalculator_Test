@@ -1,9 +1,10 @@
 public class NewCalculator_Test {
   
-  private static NewCalculator calc = new NewCalculator();
+  // private static NewCalculator calc = new NewCalculator();
 
   public static boolean testStartValueOfFirstNumber() {
-    double temp = calc.getFirstNumber();
+    NewCalculator nCalc = new NewCalculator();
+    double temp = nCalc.getFirstNumber();
     if (temp == 0) {
       return true;
     }
@@ -11,7 +12,8 @@ public class NewCalculator_Test {
   }
 
   public static boolean testStartValueOfSecondNumber() {
-    double temp = calc.getSecondNumber();
+    NewCalculator nCalc = new NewCalculator();
+    double temp = nCalc.getSecondNumber();
     if (temp == 0) {
       return true;
     }
@@ -19,7 +21,8 @@ public class NewCalculator_Test {
   }
 
   public static boolean testStartValueOfAnswer() {
-    double temp = calc.getAnswer();
+    NewCalculator nCalc = new NewCalculator();
+    double temp = nCalc.getAnswer();
     if (temp == 0) {
       return true;
     }
@@ -27,7 +30,8 @@ public class NewCalculator_Test {
   }
 
   public static boolean testStartValueOfOperator() {
-    String temp = calc.getOperator();
+    NewCalculator nCalc = new NewCalculator();
+    String temp = nCalc.getOperator();
     if (temp.equals("-1")) {
       return true;
     }
@@ -35,82 +39,95 @@ public class NewCalculator_Test {
   }
 
   public static boolean testChangeValueOfFirstNumber() {
+    NewCalculator nCalc = new NewCalculator();
     double newValue = 9.1;
-    calc.setFirstNumber(newValue);
-    if (calc.getFirstNumber() == newValue) {
+    nCalc.setFirstNumber(newValue);
+    if (nCalc.getFirstNumber() == newValue) {
       return true;
     }
     return false;
   }
 
   public static boolean testChangeValueOfSecondNumber() {
+    NewCalculator nCalc = new NewCalculator();
     double newValue = 9.1;
-    calc.setSecondNumber(newValue);
-    if (calc.getSecondNumber() == newValue) {
+    nCalc.setSecondNumber(newValue);
+    if (nCalc.getSecondNumber() == newValue) {
       return true;
     }
     return false;
   }
 
   public static boolean testChangeValueOfAnswer() {
+    NewCalculator nCalc = new NewCalculator();
     double newValue = 9.1;
-    calc.setAnswer(newValue);
-    if (calc.getAnswer() == newValue) {
+    nCalc.setAnswer(newValue);
+    if (nCalc.getAnswer() == newValue) {
       return true;
     }
     return false;
   }
 
   public static boolean testChangeValueOfOperator() {
+    NewCalculator nCalc = new NewCalculator();
     String newValue = "some value";
-    calc.setOperator(newValue);
-    if (calc.getOperator().equals(newValue)) {
+    nCalc.setOperator(newValue);
+    if (nCalc.getOperator().equals(newValue)) {
       return true;
     }
     return false;
   }
 
   public static boolean testChangedValueOfFirstNumberIsNotStartValue() {
+    NewCalculator nCalc = new NewCalculator();
+    double startValue = nCalc.getFirstNumber();
     double newValue = 9.1;
-    calc.setFirstNumber(newValue);
-    if (!testStartValueOfFirstNumber()) {
+    nCalc.setFirstNumber(newValue);
+    if (!(nCalc.getFirstNumber() == startValue)) {
       return true;
     }
     return false;
   }
 
   public static boolean testChangedValueOfSecondNumberIsNotStartValue() {
+    NewCalculator nCalc = new NewCalculator();
+    double startValue = nCalc.getSecondNumber();
     double newValue = 9.1;
-    calc.setSecondNumber(newValue);
-    if (!testStartValueOfSecondNumber()) {
+    nCalc.setSecondNumber(newValue);
+    if (!(nCalc.getSecondNumber() == startValue)) {
       return true;
     }
     return false;
   }
 
   public static boolean testChangedValueOfAnswerIsNotStartValue() {
+    NewCalculator nCalc = new NewCalculator();
+    double startValue = nCalc.getAnswer();
     double newValue = 9.1;
-    calc.setAnswer(newValue);
-    if (!testStartValueOfAnswer()) {
+    nCalc.setAnswer(newValue);
+    if (!(nCalc.getAnswer() == startValue)) {
       return true;
     }
     return false;
   }
 
   public static boolean testChangedValueOfOperatorIsNotStartValue() {
+    NewCalculator nCalc = new NewCalculator();
+    String startValue = nCalc.getOperator();
     String newValue = "not start value";
-    calc.setOperator(newValue);
-    if (!testStartValueOfOperator()) {
+    nCalc.setOperator(newValue);
+    if (!(nCalc.getOperator().equals(startValue))) {
       return true;
     }
     return false;
   }
 
   public static boolean testAdd(double d1, double d2) {
-    calc.setFirstNumber(d1);
-    calc.setSecondNumber(d2);
-    calc.add();
-    if (calc.getAnswer() == (d1 + d2)) {
+    NewCalculator nCalc = new NewCalculator();
+    nCalc.setFirstNumber(d1);
+    nCalc.setSecondNumber(d2);
+    nCalc.add();
+    if (nCalc.getAnswer() == (d1 + d2)) {
       return true;
     }
     return false;
